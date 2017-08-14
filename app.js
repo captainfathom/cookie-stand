@@ -3,15 +3,16 @@ var FirstPike = {
   customersHourMax: 65,
   customersHour: function() {
     return Math.floor(Math.random() * (this.customersHourMax - this.customersHourMin) + this.customersHourMin);
-  }
+  },
   cookiesPurchasedAvg: 6.3,
-  cookiesPurchasedHour: function(){
-    for (var i = 0, i < 15, i++)
-    cookiesPurchasedHour = cookiesPurchasedAvg * customersHour;
+  hourlyPurchaseLog: [],
+  cookiesPurchasedHour: function() {
+    for (var i = 0; i < 14; i++) {
+      var product = this.cookiesPurchasedAvg * this.customersHour();
+      this.hourlyPurchaseLog.push(product);
+    }
   }
 };
-
-console.log(customersHour)
 
 var SeaTac = {
   customersHourMin: 3,
