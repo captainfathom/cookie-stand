@@ -104,7 +104,7 @@ var seattleCenter = {
   },
   dailySales: function () {
     this.dailySalesTotal = 0;
-    for (var i = 0; i < this.Pike.hourlyPurchaseLog.length; i++) {
+    for (var i = 0; i < this.hourlyPurchaseLog.length; i++) {
       this.dailySalesTotal = this.dailySalesTotal + this.hourlyPurchaseLog[i];
     }
   },
