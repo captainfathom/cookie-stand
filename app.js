@@ -1,6 +1,6 @@
 'use strict';
 
-var FirstPike = {
+var firstPike = {
   name: '1st and Pike',
   customersHourMin: 23,
   customersHourMax: 65,
@@ -42,7 +42,7 @@ var FirstPike = {
   }
 };
 
-var SeaTac = {
+var seaTac = {
   name: 'SeaTac Airport',
   customersHourMin: 3,
   customersHourMax: 24,
@@ -62,8 +62,8 @@ var SeaTac = {
   },
   dailySales: function () {
     this.dailySalesTotal = 0;
-    for (var i = 0; i < FirstPike.hourlyPurchaseLog.length; i++) {
-      this.dailySalesTotal = this.dailySalesTotal + FirstPike.hourlyPurchaseLog[i];
+    for (var i = 0; i < this.hourlyPurchaseLog.length; i++) {
+      this.dailySalesTotal = this.dailySalesTotal + this.hourlyPurchaseLog[i];
     }
   },
   dailySalesReport: function() {
@@ -84,7 +84,7 @@ var SeaTac = {
   }
 };
 
-var SeattleCenter = {
+var seattleCenter = {
   name: 'Seattle Center',
   customersHourMin: 11,
   customersHourMax: 38,
@@ -104,8 +104,8 @@ var SeattleCenter = {
   },
   dailySales: function () {
     this.dailySalesTotal = 0;
-    for (var i = 0; i < FirstPike.hourlyPurchaseLog.length; i++) {
-      this.dailySalesTotal = this.dailySalesTotal + FirstPike.hourlyPurchaseLog[i];
+    for (var i = 0; i < this.Pike.hourlyPurchaseLog.length; i++) {
+      this.dailySalesTotal = this.dailySalesTotal + this.hourlyPurchaseLog[i];
     }
   },
   dailySalesReport: function() {
@@ -126,7 +126,7 @@ var SeattleCenter = {
   }
 };
 
-var CapitolHill = {
+var capitolHill = {
   name: 'Capitol Hill',
   customersHourMin: 20,
   customersHourMax: 38,
@@ -146,8 +146,8 @@ var CapitolHill = {
   },
   dailySales: function () {
     this.dailySalesTotal = 0;
-    for (var i = 0; i < FirstPike.hourlyPurchaseLog.length; i++) {
-      this.dailySalesTotal = this.dailySalesTotal + FirstPike.hourlyPurchaseLog[i];
+    for (var i = 0; i < this.hourlyPurchaseLog.length; i++) {
+      this.dailySalesTotal = this.dailySalesTotal + this.hourlyPurchaseLog[i];
     }
   },
   dailySalesReport: function() {
@@ -168,7 +168,7 @@ var CapitolHill = {
   }
 };
 
-var Alki = {
+var alki = {
   name: 'Alki',
   customersHourMin: 2,
   customersHourMax: 16,
@@ -188,8 +188,8 @@ var Alki = {
   },
   dailySales: function () {
     this.dailySalesTotal = 0;
-    for (var i = 0; i < FirstPike.hourlyPurchaseLog.length; i++) {
-      this.dailySalesTotal = this.dailySalesTotal + FirstPike.hourlyPurchaseLog[i];
+    for (var i = 0; i < this.hourlyPurchaseLog.length; i++) {
+      this.dailySalesTotal = this.dailySalesTotal + this.hourlyPurchaseLog[i];
     }
   },
   dailySalesReport: function() {
@@ -210,23 +210,23 @@ var Alki = {
   }
 };
 
-FirstPike.customersHour();
-FirstPike.cookiesPurchasedHour();
-FirstPike.dailySales();
-FirstPike.dailySalesReport();
-SeaTac.customersHour();
-SeaTac.cookiesPurchasedHour();
-SeaTac.dailySales();
-SeaTac.dailySalesReport();
-SeattleCenter.customersHour();
-SeattleCenter.cookiesPurchasedHour();
-SeattleCenter.dailySales();
-SeattleCenter.dailySalesReport();
-CapitolHill.customersHour();
-CapitolHill.cookiesPurchasedHour();
-CapitolHill.dailySales();
-CapitolHill.dailySalesReport();
-Alki.customersHour();
-Alki.cookiesPurchasedHour();
-Alki.dailySales();
-Alki.dailySalesReport();
+firstPike.customersHour();
+firstPike.cookiesPurchasedHour();
+firstPike.dailySales();
+firstPike.dailySalesReport();
+seaTac.customersHour();
+seaTac.cookiesPurchasedHour();
+seaTac.dailySales();
+seaTac.dailySalesReport();
+seattleCenter.customersHour();
+seattleCenter.cookiesPurchasedHour();
+seattleCenter.dailySales();
+seattleCenter.dailySalesReport();
+capitolHill.customersHour();
+capitolHill.cookiesPurchasedHour();
+capitolHill.dailySales();
+capitolHill.dailySalesReport();
+alki.customersHour();
+alki.cookiesPurchasedHour();
+alki.dailySales();
+alki.dailySalesReport();
