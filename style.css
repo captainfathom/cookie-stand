@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  top: 0
+}
+h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+  text-align: right;
+  color: white;
+  padding-top: 50px;
+  padding-right: 50px;
+}
+#tag {
+  font-size: 30px;
+}
+#title {
+  border-style: border-box;
+  width: 100%;
+  height: 200px;
+  background-color: rgb(230, 127, 146);
+}
+#nastyfish {
+  position: absolute;
+}
+body {
+  background-color: rgb(210, 251, 251);
+}
+.info {
+  list-style: none;
+}
+.description {
+  width: 100%;
+  padding-top: 80px;
+  text-align: center;
+  font-family: helvetica;
+  font-size: 20px;
+  color: rgb(65, 65, 65);
+}
+.description p {
+  padding-left: 20%;
+  padding-right: 20%;
+  align-items: center;
+}
+#contact {
+  float: left;
+  width: 30%;
+  height: 150px;
+  padding: 3%;
+  border-color: rgb(154, 71, 71);
+  border-width: thin;
+  border-style: solid;
+  margin: 3% 6%;
+  font-family: georgia;
+  font-size: 20px;
+}
+#stories {
+  float: left;
+  width: 30%;
+  height: 150px;
+  padding: 3%;
+  border-color: rgb(154, 71, 71);
+  border-width: thin;
+  border-style: solid;
+  margin: 3% 6%;
+  font-family: helvetica;
+  font-size: 20px;
+}
+.clearfix {
+  clear: both;
+}
+#copyright {
+  font-family: georgia;
+  font-size: 25px;
+  text-align: center;
+}
