@@ -44,24 +44,26 @@ body {
 #contact {
   float: left;
   width: 30%;
-  height: 150px;
-  padding: 3%;
+  border-style: border-box;
+  height: 200px;
+  padding: 2%;
   border-color: rgb(154, 71, 71);
   border-width: thin;
   border-style: solid;
-  margin: 3% 6%;
+  margin: 3% 7%;
   font-family: georgia;
   font-size: 20px;
 }
 #stories {
   float: left;
   width: 30%;
-  height: 150px;
-  padding: 3%;
+  border-style: border-box;
+  height: 200px;
+  padding: 2%;
   border-color: rgb(154, 71, 71);
   border-width: thin;
   border-style: solid;
-  margin: 3% 6%;
+  margin: 3% 7%;
   font-family: helvetica;
   font-size: 20px;
 }
@@ -71,5 +73,10 @@ body {
 #copyright {
   font-family: georgia;
   font-size: 25px;
+  color: white;
   text-align: center;
+  background-color: grey;
+}
+.bold {
+  font-weight: bolder;
 }
