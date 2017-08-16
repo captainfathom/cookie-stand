@@ -26,20 +26,31 @@ function CookieStore (name, customersHourMin, customersHourMax, openHours, cooki
     }
   };
   this.dailySalesReport = function () {
-    var location = document.getElementById('firstpike');
-    var name = document.createElement('h2');
-    name.innerText = this.name;
-    location.appendChild(name);
-    var list = document.createElement('ul');
-    location.appendChild(list);
-    for (var i = 0; i < this.openHours.length; i++) {
-      var sales = document.createElement('li');
-      sales.innerText = this.openHours[i] + ': ' + Math.round(this.hourlyPurchaseLog[i]) + ' cookies.';
-      list.appendChild(sales);
+    var content = document.getElementById('table');
+    var store = document.createElement('tr');
+    store.innerText = this.name;
+    content.appendChild(store);
+    for (var i = 0; i < this.hourlyPurchaseLog.length; i++) {
+      var printSales = document.createElement('td');
+      printSales.innerText = this.hourlyPurchaseLog[i];
+      store.appendChild(printSales);
     };
-    var total = document.createElement('li');
-    total.innerText = 'Total: ' + this.dailySalesTotal + ' cookies.';
-    list.appendChild(total);
+    var theTotal = document.createElement('td');
+    theTotal.innerText = this.dailySalesTotal;
+    store.appendChild(theTotal);
+    // var content = document.getElementsById('table');
+    // var rows = document.createElement(tr);
+    // rows.id = name;
+    // rows.innerText = name;
+    // for (var i = 0; i < this.openHours.length; i++) {
+    //   var data = document.createElement('td');
+    //   data.innerText = this.openHours[i];
+    //   table.appendChild(rows);
+    // };
+
+    // var total = document.createElement('li');
+    // total.innerText = 'Total: ' + this.dailySalesTotal + ' cookies.';
+    // list.appendChild(total);
   };
 };
 
@@ -49,7 +60,24 @@ var seattleCenter = new CookieStore ('Seattle Center', 11, 38, openHours, 3.7);
 var capitolHill = new CookieStore ('Capitol Hill', 20, 38, openHours, 2.3);
 var alki = new CookieStore ('Alki', 2, 16, openHours, 4.6);
 
-// var storeList = [firstPike, seaTac, seattleCenter, capitolHill, alki]
+var createTable = function () {
+  var location = document.getElementById('stores');
+  var table = document.createElement('table');
+  location.appendChild(table);
+  table.id = 'table';
+  var blank = document.createElement('th');
+  table.appendChild(blank);
+  for (var i = 0; i < openHours.length; i++) {
+    var time = document.createElement('th');
+    time.innerText = openHours[i];
+    table.appendChild(time);
+  };
+  var grandTotal = document.createElement('th');
+  grandTotal.innerText = 'Total';
+  table.appendChild(grandTotal);
+};
+createTable();
+var storeList = [firstPike, seaTac, seattleCenter, capitolHill, alki]
 
 firstPike.customersHour();
 firstPike.cookiesPurchasedHour();
@@ -71,6 +99,7 @@ alki.customersHour();
 alki.cookiesPurchasedHour();
 alki.dailySales();
 alki.dailySalesReport();
+
 //objects from former part of assignment. just here for reference.
 // var firstPike = {
 //   name: '1st and Pike',
