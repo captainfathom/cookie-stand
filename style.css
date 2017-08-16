@@ -80,3 +80,10 @@ body {
 .bold {
   font-weight: bolder;
 }
+tr:nth-child(3n){
+  background-color: pink;
+}
+th {
+  background-color: darkgrey;
+  color: white;
+}

@@ -108,6 +108,7 @@ var subTotals = document.createElement('tr');
 subTotals.innerText = 'Daily Totals';
 table.appendChild(subTotals);
 
+//my hiddeous attempt at totalling each column. still not sure why the for loops didn't work
 var columnOne = document.createElement('td');
 var sumOne = 0;
 for (var a = 0; a < storeList.length; a++) {
