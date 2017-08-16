@@ -226,7 +226,6 @@ subTotals.appendChild(columnFourteen);
 // var dailyStoreTotal = function () {
 //   for (var i = 0; i < openHours.length; i++) {
 //     var hourlyTotal = 0;
-//     console.log(hourlyTotal);
 //     for (var j = 0; j < storeList.lenth; j++) {
 //       hourlyTotal += storeList[j].hourlyPurchaseLog[i];
 //     }
