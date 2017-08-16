@@ -77,8 +77,11 @@ var createTable = function () {
   table.appendChild(grandTotal);
 };
 createTable();
-var storeList = [firstPike, seaTac, seattleCenter, capitolHill, alki]
+var storeList = [firstPike, seaTac, seattleCenter, capitolHill, alki];
 
+// for (var i = 0; i < storeList.length; i++) {
+//   storeList[i].dailySalesReport;
+// };
 firstPike.customersHour();
 firstPike.cookiesPurchasedHour();
 firstPike.dailySales();
@@ -100,6 +103,30 @@ alki.cookiesPurchasedHour();
 alki.dailySales();
 alki.dailySalesReport();
 
+var subTotals = document.createElement('tr');
+subTotals.innerText = 'Daily Totals';
+table.appendChild(subTotals);
+
+var grandTotal = 0;
+
+var dailyStoreTotal = function (){
+  grandTotal = 0;
+  for (var i = 0; i < openHours.length; i++) {
+    var hourlyTotal = 0;
+    for (var j = 0; j < storeList.lenth; j++) {
+      hourlyTotal = hourlyTotal + storeList[j].dailyStoreTotal[i];
+    };
+    var totes = document.createElement('td');
+    totes.innerText = hourlyTotal;
+    subTotals.appendChild(totes);
+    grandTotal = grandTotal + hourlyTotal;
+  };
+};
+dailyStoreTotal();
+
+var theBigTotes = document.createElement('td');
+theBigTotes.innerText = grandTotal;
+subTotals.appendChild(theBigTotes);
 //objects from former part of assignment. just here for reference.
 // var firstPike = {
 //   name: '1st and Pike',
