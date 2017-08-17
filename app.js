@@ -1,6 +1,18 @@
 'use strict';
 var openHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
+function newElement (elType, elClass, elContent, elParent) {
+  var element = document.createElement(elType);
+  if (elClass && elClass !== ''){
+    newElement.className = elClass;
+  }
+  if (elContent && elContent !== ''){
+    newElement.innerText = elContent;
+  }
+  elParent.appendChild(element);
+  return element;
+};
+
 function CookieStore (name, customersHourMin, customersHourMax, cookiesPurchasedAvg) {
   this.name = name;
   this.customersHourMin = customersHourMin;
@@ -103,7 +115,6 @@ subTotals.appendChild(theBigTotes);
 function createStore (event) {
   event.preventDefault();
   var newStore = new CookieStore;
-  // newStore.name = this.element['name'].value;
   newStore.name = this.elements['location'].value;
   newStore.customersHourMin = this.elements['mincustomerhour'].value;
   newStore.customersHourMax = this.elements['maxcustomerhour'].value;
