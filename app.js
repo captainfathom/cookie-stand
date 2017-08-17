@@ -12,35 +12,35 @@ function CookieStore (name, customersHourMin, customersHourMax, cookiesPurchased
   this.customersHour = function () {
     return Math.floor(Math.random() * (this.customersHourMax - this.customersHourMin) + this.customersHourMin);
   };
-  this.customersHour();
   this.cookiesPurchasedHour = function () {
-    this.hourlyPurchaseLog = [];
     for (var i = 0; i < openHours.length; i++) {
       var product = Math.floor(this.cookiesPurchasedAvg * this.customersHour());
       this.hourlyPurchaseLog.push(product);
     }
   };
-  this.cookiesPurchasedHour();
   this.dailySales = function () {
-    this.dailySalesTotal = 0;
     for (var i = 0; i < this.hourlyPurchaseLog.length; i++) {
       this.dailySalesTotal = this.dailySalesTotal + this.hourlyPurchaseLog[i];
     }
   };
-  this.dailySales();
   this.renderToHTML = function () {
+    this.customersHour();
+    this.cookiesPurchasedHour();
+    this.dailySales();
     var content = document.getElementById('table');
-    var store = document.createElement('tr');
+    var storeRow = document.createElement('tr');
+    content.appendChild(storeRow);
+    var store = document.createElement('td');
     store.innerText = this.name;
-    content.appendChild(store);
+    storeRow.appendChild(store);
     for (var i = 0; i < this.hourlyPurchaseLog.length; i++) {
       var printSales = document.createElement('td');
       printSales.innerText = this.hourlyPurchaseLog[i];
-      store.appendChild(printSales);
+      storeRow.appendChild(printSales);
     };
     var theTotal = document.createElement('td');
     theTotal.innerText = this.dailySalesTotal;
-    store.appendChild(theTotal);
+    storeRow.appendChild(theTotal);
   };
   storeList.push(this);
 };
@@ -58,16 +58,18 @@ var createTable = function () {
   var table = document.createElement('table');
   location.appendChild(table);
   table.id = 'table';
+  var headerRow = document.createElement('tr');
+  table.appendChild(headerRow);
   var blank = document.createElement('th');
-  table.appendChild(blank);
+  headerRow.appendChild(blank);
   for (var i = 0; i < openHours.length; i++) {
     var time = document.createElement('th');
     time.innerText = openHours[i];
-    table.appendChild(time);
+    headerRow.appendChild(time);
   };
-  var grandTotal = document.createElement('th');
-  grandTotal.innerText = 'Total';
-  table.appendChild(grandTotal);
+  var storeTotal = document.createElement('th');
+  storeTotal.innerText = 'Total';
+  headerRow.appendChild(storeTotal);
 };
 createTable();
 
@@ -77,13 +79,16 @@ for (var z = 0; z < storeList.length; z++) {
 }
 
 //totals
-var subTotals = document.createElement('tr');
+var subTotalsRow = document.createElement('tr');
+table.appendChild(subTotalsRow);
+subTotalsRow.id = 'subTotals';
+var subTotals = document.createElement('td');
 subTotals.innerText = 'Daily Totals';
-table.appendChild(subTotals);
+subTotalsRow.appendChild(subTotals);
 
-var grandTotal = 0;
 
 var dailyStoreTotal = function () {
+  var grandTotal = 0;
   for (var i = 0; i < openHours.length; i++) {
     var hourlyTotal = 0;
     for (var j = 0; j < storeList.length; j++) {
@@ -91,26 +96,25 @@ var dailyStoreTotal = function () {
     }
     var columnTotal = document.createElement('td');
     columnTotal.innerText = hourlyTotal;
-    subTotals.appendChild(columnTotal);
+    subTotalsRow.appendChild(columnTotal);
     grandTotal += hourlyTotal;
   }
+  var theBigTotes = document.createElement('td');
+  theBigTotes.innerText = grandTotal;
+  subTotalsRow.appendChild(theBigTotes);
 };
 dailyStoreTotal();
 
-var theBigTotes = document.createElement('td');
-theBigTotes.innerText = grandTotal;
-subTotals.appendChild(theBigTotes);
 
 function createStore (event) {
   event.preventDefault();
   var newStore = new CookieStore;
   newStore.name = this.elements['location'].value;
-  newStore.customersHourMin = this.elements['mincustomerhour'].value;
-  newStore.customersHourMax = this.elements['maxcustomerhour'].value;
-  newStore.cookiesPurchasedAvg = this.elements['cookiespercustomer'].value;
-  newStore.cookiesPurchasedHour();
-  newStore.dailySales();
+  newStore.customersHourMin = parseInt(this.elements['mincustomerhour'].value);
+  newStore.customersHourMax = parseInt(this.elements['maxcustomerhour'].value);
+  newStore.cookiesPurchasedAvg = parseFloat(this.elements['cookiespercustomer'].value);
   newStore.renderToHTML();
+  form.reset();
 }
 
 var form = document.getElementById('newStoreForm');
