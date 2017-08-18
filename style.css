@@ -7,7 +7,7 @@ h1 {
   font-size: 40px;
   text-align: right;
   color: white;
-  padding-top: 50px;
+  padding-top: 75px;
   padding-right: 50px;
 }
 #tag {
@@ -16,59 +16,103 @@ h1 {
 #title {
   border-style: border-box;
   width: 100%;
-  height: 200px;
+  height: 250px;
   background-color: rgb(230, 127, 146);
 }
 #nastyfish {
   position: absolute;
+  top: 50px;
+  left: 50px;
+}
+#nastyfishpic {
+  width: 60%;
 }
 body {
   background-color: rgb(210, 251, 251);
 }
+#blocktwo {
+  background-color: white;
+  height: 300px;
+}
 .info {
   list-style: none;
 }
-.description {
-  width: 100%;
-  padding-top: 80px;
+#description {
+  box-sizing: border-box;
+  float: left;
+  width: 60%;
   text-align: center;
   font-family: helvetica;
   font-size: 20px;
   color: rgb(65, 65, 65);
+  background-color: white;
 }
-.description p {
-  padding-left: 20%;
-  padding-right: 20%;
+#description p {
   align-items: center;
+  padding-top: 7%;
+  padding-right: 12%;
+}
+#descriptionpic {
+  padding-top: 3%;
+  width: 40%;
+  text-align: center;
+  float: left;
+  background-color: white;
+}
+#littlefish {
+  width: 240px;
 }
 #contact {
-  float: left;
   width: 30%;
   border-style: border-box;
   height: 200px;
   padding: 2%;
-  border-color: rgb(154, 71, 71);
-  border-width: thin;
-  border-style: solid;
   margin: 3% 7%;
   font-family: georgia;
   font-size: 20px;
 }
-#stories {
+#family {
+  box-sizing: border-box;
+  text-align: right;
   float: left;
-  width: 30%;
+  width: 60%;
+}
+#familypic {
+  width: 95%;
+}
+#storyblock {
+  width: 100%;
+  background-color: inherit;
+  position: relative;
+}
+#stories {
+  box-sizing: border-box;
+  float: left;
+  width: 40%;
   border-style: border-box;
-  height: 200px;
-  padding: 2%;
-  border-color: rgb(154, 71, 71);
-  border-width: thin;
-  border-style: solid;
-  margin: 3% 7%;
   font-family: helvetica;
   font-size: 20px;
 }
+#quotes {
+  text-align: center;
+  /*padding-left: 20%;*/
+  padding-top: 10%;
+}
+#stories p {
+  text-align: left;
+  text-align: left;
+  font-size: 14;
+  padding-left: 5%;
+  padding-top: 5%;
+}
 .clearfix {
   clear: both;
+}
+#bigfish {
+  width: 100%;
+}
+#bigfishimg {
+  width: 100%;
 }
 #copyright {
   font-family: georgia;

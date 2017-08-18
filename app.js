@@ -79,15 +79,14 @@ for (var z = 0; z < storeList.length; z++) {
 }
 
 //totals
-var subTotalsRow = document.createElement('tr');
-table.appendChild(subTotalsRow);
-subTotalsRow.id = 'subTotals';
-var subTotals = document.createElement('td');
-subTotals.innerText = 'Daily Totals';
-subTotalsRow.appendChild(subTotals);
-
 
 var dailyStoreTotal = function () {
+  var subTotalsRow = document.createElement('tr');
+  table.appendChild(subTotalsRow);
+  subTotalsRow.id = 'subTotals';
+  var subTotals = document.createElement('td');
+  subTotals.innerText = 'Daily Totals';
+  subTotalsRow.appendChild(subTotals);
   var grandTotal = 0;
   for (var i = 0; i < openHours.length; i++) {
     var hourlyTotal = 0;
@@ -105,7 +104,6 @@ var dailyStoreTotal = function () {
 };
 dailyStoreTotal();
 
-
 function createStore (event) {
   event.preventDefault();
   var newStore = new CookieStore;
@@ -113,7 +111,11 @@ function createStore (event) {
   newStore.customersHourMin = parseInt(this.elements['mincustomerhour'].value);
   newStore.customersHourMax = parseInt(this.elements['maxcustomerhour'].value);
   newStore.cookiesPurchasedAvg = parseFloat(this.elements['cookiespercustomer'].value);
+  var table = document.getElementById('table');
+  var subTotalsRow = document.getElementById('subTotals');
+  table.removeChild(subTotalsRow);
   newStore.renderToHTML();
+  dailyStoreTotal();
   form.reset();
 }
 
