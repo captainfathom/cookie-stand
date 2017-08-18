@@ -7,8 +7,8 @@ h1 {
   font-size: 40px;
   text-align: right;
   color: white;
-  padding-top: 50px;
-  padding-right: 50px;
+  padding-top: 75px;
+  padding-right: 7%;
 }
 #tag {
   font-size: 30px;
@@ -16,59 +16,176 @@ h1 {
 #title {
   border-style: border-box;
   width: 100%;
-  height: 200px;
+  height: 250px;
   background-color: rgb(230, 127, 146);
 }
 #nastyfish {
   position: absolute;
+  top: 50px;
+  padding-left: 5%;
+}
+#nastyfishpic {
+  width: 60%;
 }
 body {
   background-color: rgb(210, 251, 251);
 }
+#blocktwo {
+  background-color: white;
+  height: 300px;
+}
 .info {
   list-style: none;
 }
-.description {
-  width: 100%;
-  padding-top: 80px;
+#description {
+  box-sizing: border-box;
+  float: left;
+  width: 60%;
   text-align: center;
   font-family: helvetica;
   font-size: 20px;
   color: rgb(65, 65, 65);
+  background-color: white;
 }
-.description p {
-  padding-left: 20%;
-  padding-right: 20%;
+#description p {
+  color: #656565;
   align-items: center;
+  padding-top: 7%;
+  padding-right: 15%;
+}
+#descriptionpic {
+  padding-top: 3%;
+  width: 40%;
+  text-align: center;
+  float: left;
+  background-color: white;
+}
+#littlefish {
+  width: 240px;
 }
 #contact {
-  float: left;
-  width: 30%;
+  width: 35%;
   border-style: border-box;
-  height: 200px;
-  padding: 2%;
-  border-color: rgb(154, 71, 71);
-  border-width: thin;
-  border-style: solid;
-  margin: 3% 7%;
+  /*height: 200px;*/
+  /*padding: 2%;*/
+  /*margin: 3% 7%;*/
   font-family: georgia;
   font-size: 20px;
+  float: left;
+}
+#contact h2 {
+  text-align: left;
+  padding-left: 15%;
+  font-size: 22px;
+}
+.info {
+  padding-left: 15%;
+  color: #656565;
+  text-align: left;
+}
+#family {
+  box-sizing: border-box;
+  text-align: right;
+  float: left;
+  width: 60%;
+}
+#familypic {
+  width: 95%;
+}
+#storyblock {
+  width: 100%;
+  background-color: inherit;
+  position: relative;
 }
 #stories {
+  box-sizing: border-box;
   float: left;
-  width: 30%;
+  width: 40%;
   border-style: border-box;
-  height: 200px;
-  padding: 2%;
-  border-color: rgb(154, 71, 71);
-  border-width: thin;
-  border-style: solid;
-  margin: 3% 7%;
   font-family: helvetica;
   font-size: 20px;
 }
+#stories .name {
+  float: right;
+}
+.title {
+  text-align: center;
+  padding-top: 10%;
+  color: #656565;
+  font-size: 22px;
+}
+#stories p {
+  text-align: left;
+  text-align: left;
+  font-size: 18px;
+  padding-left: 5%;
+  padding-top: 5%;
+  color: #656565;
+}
 .clearfix {
   clear: both;
+}
+#bigfish {
+  background-color: white;
+  width: 100%;
+}
+#cookiestext .title {
+  padding-top: 4%;
+  font-size: 35px;
+}
+#bigfishimg {
+  width: 100%;
+}
+#ourcookies {
+  background-color: white;
+}
+#cookiestext p {
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  color: #656565;
+  font-size: 18px;
+}
+.signature {
+  float: right;
+}
+#cookiesone {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+#cookiestwo {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+#cookiestwo img {
+  width: 473px;
+}
+#store {
+  float: left;
+  box-sizing: border-box;
+  width: 35%;
+}
+#shirt {
+  width: 30%;
+  box-sizing: border-box;
+  float: left;
+}
+#store h2 {
+  text-align: right;
+  padding-right: 7%;
+  font-size: 22px;
+}
+#store ul {
+  padding-right: 7%;
+  text-align: right;
+  list-style: none;
+  font-size: 22px;
+  color: #656565;
+}
+#store p {
+  /*float: left;*/
 }
 #copyright {
   font-family: georgia;
@@ -76,6 +193,7 @@ body {
   color: white;
   text-align: center;
   background-color: grey;
+  height: 150px;
 }
 .bold {
   font-weight: bolder;
